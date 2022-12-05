@@ -1,0 +1,10 @@
+footer{
+    background-color: royalblue;
+    color: white;
+    font-size: 1.15rem;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
+}

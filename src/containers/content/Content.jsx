@@ -1,31 +1,21 @@
 import React from "react";
-import './content.css';
-import { useState } from "react";
+import "./content.css";
+import ItemList from "./logic/ItemList";
 
-const Content = () => {
-    const [name, setName] = useState('Bob')
+const Content = ({ items, handleCheck, handleDelete }) => {
+  return (
+    <>
+      {items.length ? (
+        <ItemList
+          items={items}
+          handleCheck={handleCheck}
+          handleDelete={handleDelete}
+        />
+      ) : (
+        <h3>Your list is empty.</h3>
+      )}
+    </>
+  );
+};
 
-    const randomName = () => {
-        const names = ['Bob', 'Kevin', 'John']
-        setName(names[randomNumber(0, names.length)])
-    }
-
-    
-    const handleClick2 = (name) => {
-        alert(`Name: ${name}`)
-    }
-
-    return(
-        <main className="blue">
-            <h1>Hello {name}!</h1>
-            <button onClick={randomName}>Change name</button>
-            <button onClick={ () => handleClick2('Maciek')}>Click me</button>
-        </main>
-    )
-}
-
-const randomNumber = ( min, max ) => {
-    return Math.floor( Math.random() * ( max - min) + min)
-}
-
-export default Content
+export default Content;

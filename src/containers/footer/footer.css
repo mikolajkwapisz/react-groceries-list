@@ -8,3 +8,8 @@ footer{
     width: 100vw;
     bottom: 0;
 }
+
+footer p {
+    font-family: 'Roboto';
+
+}

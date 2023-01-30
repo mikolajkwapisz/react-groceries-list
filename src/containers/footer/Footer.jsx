@@ -1,13 +1,15 @@
 import React from 'react'
 import './footer.css'
 
-const Footer = () => {
-    const date = new Date()
-    const today = date.getFullYear();
+const Footer = ( { length }) => {
 
   return (
     <footer>
-        <p>Copyright &copy; {today}</p>
+          {length === 1 ? (
+            <p>List items: {length}</p>
+            ) : (
+              <p>List items: {length}</p>
+          )} 
     </footer>
   )
 }
